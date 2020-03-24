@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Home from './Pages/Home';
 import Navigation from './components/Navigation';
 import ShopItem from './Pages/ShopItem';
+import Contact from './Pages/Contact';
 
 
 export default class App extends React.Component{
@@ -20,8 +21,8 @@ export default class App extends React.Component{
                         component={Home}
                     />
                     <Route
-                        path="/shop"
-                        component={ShopItem}
+                        path="/contact"
+                        component={Contact}
                     />
                 </Navigation>
             </Router>

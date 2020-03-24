@@ -14,13 +14,15 @@ export default class Navigation extends React.Component{
                         </button>
                         <div className="collapse navbar-collapse" id="navbarResponsive">
                             <ul className="navbar-nav ml-auto">
-                                <li className="nav-item active">
-                                    <Link className="nav-link" to={"/"}>Home
-                                        <span className="sr-only">(current)</span>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to={"/"}>
+                                        Home
                                     </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">Contact</a>
+                                    <Link className="nav-link" to={"/contact"}>
+                                        Contact
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
