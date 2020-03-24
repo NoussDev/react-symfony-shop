@@ -12,7 +12,7 @@ export default class CardItem extends React.Component{
                         <p className="card-text">{this.props.content}</p>
                     </div>
                     <div className="card-footer">
-                        <Link to={`/shop/${this.props.id}`} className="btn btn-primary btn-sm">More Info</Link>
+                        <Link to={`/shop/${this.props.id}`} className="btn btn-primary btn-sm">Go to product</Link>
                     </div>
                 </div>
             </div>
