@@ -22,14 +22,15 @@ export default class Home extends React.Component{
             products: products.data,
             loading: false
         })
-        console.log(this.state.products)
     }
     render(){
         return(
                 this.state.loading ?
-                    <div className="d-flex justify-content-center">
-                        <div className="spinner-border" role="status">
-                            <span className="sr-only">Loading...</span>
+                    <div className="container">
+                        <div className="d-flex spinner">
+                            <div className="spinner-border" role="status">
+                                <span className="sr-only">Loading...</span>
+                            </div>
                         </div>
                     </div>
                 :
