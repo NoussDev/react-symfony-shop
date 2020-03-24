@@ -7,7 +7,7 @@ export default class ShopItem extends React.Component{
     render(){
         return(
             <div className="container">
-                    <Link to={"/"} className="btn btn-primary btn-sm"><span className="glyphicon glyphicon-arrow-left"></span>Back</Link>
+                    <Link to={"/"} className="btn btn-primary btn-sm">Back</Link>
                 <div className="row">
                     <Product
                         picture={"https://i.picsum.photos/id/2/900/400.jpg"}
