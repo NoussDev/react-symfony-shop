@@ -1,25 +1,31 @@
+require('../css/app.css')
+
 import React from 'react'
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
-//css
-import '../css/small-business.css'
-
-//import Components
-import Navigation from './components/Navigation'
-import HeadingRow from './components/HeadingRow'
-import Cards from './components/Cards';
+import Home from './Pages/Home';
+import Navigation from './components/Navigation';
+import ShopItem from './Pages/ShopItem';
 
 
 export default class App extends React.Component{
     render(){
         return(
-            <div>
-                <Navigation />
-                <div className="container">
-                    <HeadingRow />
-                    <Cards />
-                </div>
-            </div>
+            <Router>
+                <Navigation>
+                    <Route 
+                        exact
+                        path="/"
+                        component={Home}
+                    />
+                    <Route
+                        path="/shop"
+                        component={ShopItem}
+                    />
+                </Navigation>
+            </Router>
+
         )
     }
 }

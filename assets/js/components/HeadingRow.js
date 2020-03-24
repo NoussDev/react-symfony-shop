@@ -5,12 +5,12 @@ export default class HeadingRow extends React.Component{
         return(
             <div className="row align-items-center my-5">
                 <div className="col-lg-7">
-                    <img className="img-fluid rounded mb-4 mb-lg-0" src="http://placehold.it/900x400" alt=""/>
+                    <img className="img-fluid rounded mb-4 mb-lg-0"src={this.props.picture} alt=""/>
                 </div>
                 <div className="col-lg-5">
-                    <h1 className="font-weight-light">Business Name or Tagline</h1>
-                    <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
-                    <a className="btn btn-primary" href="#">Call to Action!</a>
+                    <h1 className="font-weight-light">{this.props.title}</h1>
+                    <p>{this.props.content}</p>
+                    <a className="btn btn-primary" href="#">{this.props.textButton}</a>
                 </div>
             </div>
         )
