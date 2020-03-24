@@ -57,6 +57,14 @@ class MainController extends AbstractController
                 'price' => '99.99',
                 'stars' => '4'
             ],
+            [
+                'id' => 5,
+                'picture' => "https://i.picsum.photos/id/15/900/400.jpg",
+                'title' => "It's a new product",
+                'content' => "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.",
+                'price' => '9.99',
+                'stars' => '5'
+            ],
         ];
 
         $response = new Response();

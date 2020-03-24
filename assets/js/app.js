@@ -21,6 +21,10 @@ export default class App extends React.Component{
                         component={Home}
                     />
                     <Route
+                        path="/shop/:id"
+                        component={ShopItem}
+                    />
+                    <Route
                         path="/contact"
                         component={Contact}
                     />
