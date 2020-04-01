@@ -42,10 +42,11 @@ export default class ShopItem extends React.Component{
                         :
                         <div className="row">
                             <Product
+                                id={this.state.product.id}
                                 picture={this.state.product.picture}
-                                name={this.state.product.name}
+                                title={this.state.product.title}
                                 price={this.state.product.price}
-                                description={this.state.product.content}
+                                content={this.state.product.content}
                                 stars={this.state.product.stars}
                             />
                         </div>

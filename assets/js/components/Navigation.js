@@ -1,10 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 
-export default class Navigation extends React.Component{
+class Navigation extends React.Component{
     render(){
+        console.log((this.props.cart.length - 1))
         return(
-
             <div>
                 <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
                     <div className="container">
@@ -24,6 +25,12 @@ export default class Navigation extends React.Component{
                                         Contact
                                     </Link>
                                 </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to={"/cart"}>
+                                        <i className="fa fa-shopping-cart"></i> Cart :
+                                        <span style={{color: "white"}}> {(this.props.cart.length - 1) === 0 ? 0 : (this.props.cart.length - 1)}</span>
+                                    </Link>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -33,3 +40,11 @@ export default class Navigation extends React.Component{
         )
     }
 }
+
+const mapStateToProp = state => {
+    return {
+        cart: state.cart
+    }
+}
+
+export default connect(mapStateToProp)(Navigation)

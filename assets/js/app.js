@@ -9,6 +9,12 @@ import Navigation from './components/Navigation';
 import ShopItem from './Pages/ShopItem';
 import Contact from './Pages/Contact';
 
+import { createStore } from "redux"
+import rootReducer from "./store/reducers"
+import { Provider } from "react-redux"
+
+const store = createStore(rootReducer)
+
 
 export default class App extends React.Component{
     render(){
@@ -35,4 +41,8 @@ export default class App extends React.Component{
     }
 }
 
-ReactDOM.render(<App/>, document.getElementById('root'));
+ReactDOM.render(
+    <Provider store={store}>
+        <App/>
+    </Provider>
+, document.getElementById('root'));
