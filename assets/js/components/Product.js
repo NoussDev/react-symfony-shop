@@ -19,9 +19,9 @@ class Product extends React.Component{
                     <div className="d-flex justify-content-start">
                         <button 
                             className="btn btn-primary btn-lg" 
-                            onClick={ e => {this.props.addProductToCart(this.props.id,this.props.title,this.props.price)}} 
+                            onClick={ e => {this.props.addProductToCart(this.props.id,this.props.picture,this.props.title,this.props.price)}} 
                             id="add_cart">
-                            Add to Cart
+                            <i className="fa fa-plus"></i> Add to Cart 
                         </button>
                     </div>
                 </div>
@@ -38,8 +38,8 @@ const mapStateToProp = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        addProductToCart: (id,title,price) => {
-            dispatch(CartActions.addProductToCart(id,title,price))
+        addProductToCart: (id,picture,title,price) => {
+            dispatch(CartActions.addProductToCart(id,picture,title,price))
         }
     }
 }

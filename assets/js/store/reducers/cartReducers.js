@@ -1,6 +1,7 @@
 const defaultState = {
     product: {
-        id: {},
+        id: "",
+        picture:"",
         title: "",
         price:0
     }
@@ -14,6 +15,9 @@ const cart = (state = defaultState, action) => {
                 ...state,
                 {product:action.payload}
             ]
+        case "DELETE":
+            var newState = state.filter(tab => tab.product.id !== action.payload.id)
+            return [...newState]
         default:
             return [state]
     }

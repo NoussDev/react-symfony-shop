@@ -12,6 +12,7 @@ import Contact from './Pages/Contact';
 import { createStore } from "redux"
 import rootReducer from "./store/reducers"
 import { Provider } from "react-redux"
+import Cart from './Pages/Cart';
 
 const store = createStore(rootReducer)
 
@@ -33,6 +34,10 @@ export default class App extends React.Component{
                     <Route
                         path="/contact"
                         component={Contact}
+                    />
+                    <Route
+                        path="/cart"
+                        component={Cart}
                     />
                 </Navigation>
             </Router>

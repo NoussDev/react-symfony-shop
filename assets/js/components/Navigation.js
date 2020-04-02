@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 
 class Navigation extends React.Component{
     render(){
-        console.log((this.props.cart.length - 1))
         return(
             <div>
                 <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
