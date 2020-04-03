@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Product;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -28,8 +28,10 @@ class ProductController extends AbstractController
             ->add("title", TextType::class)
             ->add("picture", TextType::class)
             ->add("content", TextareaType::class)
-            ->add("price", IntegerType::class)
-            ->add("stars", IntegerType::class)
+            ->add("price", NumberType::class, [
+                "grouping" => true 
+            ])
+            ->add("stars", NumberType::class)
             ->add("save", SubmitType::class)
             ->getForm();
 
