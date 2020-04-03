@@ -15,7 +15,7 @@ class Cart extends Component{
         }
     }
 
-    payment = (price) => {
+    addMoneyPayment = (price) => {
         var sub = Number(this.state.SubTotal) + Number(price)
         var total = sub + Number(this.state.Shipping)
         this.setState({
@@ -24,12 +24,8 @@ class Cart extends Component{
        })
     }
 
-    componentDidMount(){
-        var price = 0
-        this.props.cart.map((row) => {
-            price += Number(row.product.price);
-        })
-        this.payment(price)
+    componentDidUpdate = () => {
+        console.log(this.props.cart)
     }
 
     render(){
