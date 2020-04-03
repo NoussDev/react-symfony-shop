@@ -2,8 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Product;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 class AdminController extends AbstractController
@@ -11,10 +11,14 @@ class AdminController extends AbstractController
     /**
      * @Route("/admin", name="admin")
      */
-    public function index(Request $request)
+    public function index()
     {
+        $products = $this->getDoctrine()->getRepository(Product::class);
+        $products = $products->findAll();
+
         return $this->render('admin/index.html.twig',[
-            "user" => "admin"
+            "user" => "admin",
+            "products" => $products
         ]);
     }
 }

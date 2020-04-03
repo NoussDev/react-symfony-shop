@@ -31,7 +31,9 @@
 
             <script>
                 $(document).ready(function() {
-                    $('#dataTable').DataTable();
+                    $('#dataTable').DataTable({
+                        responsive: true
+                    });
                 });
                 (function($) {
                     "use strict";
