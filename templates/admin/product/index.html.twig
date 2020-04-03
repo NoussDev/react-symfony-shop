@@ -1,0 +1,101 @@
+{% extends 'admin/index.html.twig' %}
+
+{% block title %}Dashboard - Add product{% endblock %}
+
+{% block main %}
+
+<div class="container">
+    <h2 class="text-center mb-4">Add new product form</h2>
+        {{ form_start(form_add_product) }}
+        <div class="row justify-content-md-center">
+            <div class="col-md-8">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1"><i class="fas fa-barcode"></i></span>
+                    </div>
+                     {{ form_widget(form_add_product.title, {
+                         "attr" :{
+                             "class": "form-control",
+                             "placeholder": "Name product",
+                         }
+                     }) }}
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-md-8">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1"><i class="fas fa-book"></i></span>
+                    </div>
+                     {{ form_widget(form_add_product.content, {
+                         "attr" :{
+                             "class": "form-control",
+                             "placeholder": "Product description",
+                         }
+                     }) }}
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-md-8">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1"><i class="fas fa-image"></i></span>
+                    </div>
+                     {{ form_widget(form_add_product.picture, {
+                         "attr" :{
+                             "class": "form-control",
+                             "placeholder": "Picture of the product",
+                         }
+                     }) }}
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-md-8">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1"><i class="fas fa-money-bill-wave"></i></span>
+                    </div>
+                     {{ form_widget(form_add_product.price, {
+                         "attr" :{
+                             "class": "form-control",
+                             "placeholder": "Price of the product",
+                         }
+                     }) }}
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-md-8">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1"><i class="fas fa-star"></i></span>
+                    </div>
+                     {{ form_widget(form_add_product.stars, {
+                         "attr" :{
+                             "class": "form-control",
+                             "placeholder": "Number of stars",
+                         }
+                     }) }}
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-md-2">
+                <div class="input-group mb-3">
+                     {{ form_widget(form_add_product.save, {
+                         "attr" :{
+                             "class": "btn btn-primary"
+                         }
+                     }) }}
+                </div>
+            </div>
+        </div>
+
+        {{ form_end(form_add_product) }}
+</div>
+   
+
+{% endblock %}

@@ -16,3 +16,15 @@ You must :
 - npm install
 - symfony server:start
 - To develop you have to => yarn encore dev --watch (it's for generate the css and js in symfony structure)
+
+
+
+TODO : 
+React : 
+- display stars on product's page
+- manage price on chart's page
+- add payment's page
+
+Symfony : 
+- create Back office to add the products (CRUD)
+- to add user login
