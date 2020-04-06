@@ -26,5 +26,6 @@ React :
 - add payment's page
 
 Symfony : 
-- create Back office to add the products (CRUD)
-- to add user login
+- manage users, read and delete
+- when i'm connect and i'm on the login page, i'm auto redirect to dashboard
+- javascript stars on the product form
