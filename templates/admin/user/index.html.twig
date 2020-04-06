@@ -1,0 +1,48 @@
+{% extends 'admin/index.html.twig' %}
+{% form_theme form_add_user 'bootstrap_4_layout.html.twig' %}
+
+{% block title %}Dashboard - Add user{% endblock %}
+{% block customStyles %}
+    <link rel="stylesheet" href="{{ asset('build/admin.css')}}">
+{% endblock %}
+
+{% block main %}
+<hr>
+<div class="container">
+    <h2 class="text-center mb-4">Add new product form</h2>
+    {{ form_start(form_add_user) }}
+
+        {{ form_row(form_add_user.username, {
+            "label":"Username",
+            "attr" : {
+                "placeholder":"Kevin34"
+                }
+            }) 
+        }}
+
+        {{ form_row(form_add_user.email, {
+            "label":"Email",
+            "attr" : {
+                "placeholder":"Kevin34@gmail.com"
+                }
+            }) 
+        }}
+
+        {{ form_row(form_add_user.password, {
+            "label":"Password",
+            }) 
+        }}
+        {{ form_row(form_add_user.confirm_password, {
+            "label":"Confirm password",
+            }) 
+        }}
+
+
+        {{ form_row(form_add_user.save, {
+                "label":"Add user"
+                })
+            }}
+
+    {{ form_end(form_add_user) }}
+</div>
+{% endblock %}

@@ -8,8 +8,9 @@
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
             <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
             <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
-            <link rel="stylesheet" href="{{ asset('build/admin.css')}}">
-
+        {% endblock %}
+        {% block customStyles %}
+            
         {% endblock %}
     </head>
     <body>
@@ -32,7 +33,10 @@
             <script>
                 $(document).ready(function() {
                     $('#dataTable').DataTable({
-                        responsive: true
+                        responsive: true,
+                        columnsDefs:[
+                            {responsivePriority: 1, targets: 6}
+                        ]
                     });
                 });
                 (function($) {
