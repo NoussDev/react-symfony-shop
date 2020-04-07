@@ -15,8 +15,17 @@ class Cart extends Component{
         }
     }
 
-    addMoneyPayment = (price) => {
-        var sub = Number(this.state.SubTotal) + Number(price)
+    updateMoneyPayment = (price, action) => {
+        console.log(action)
+        var sub
+        switch(action){
+            case 'ADD':
+                sub = Number(this.state.SubTotal) + Number(price)
+                break
+            case 'DEL':
+                sub = Number(this.state.SubTotal) - Number(price)
+                break
+        }
         var total = sub + Number(this.state.Shipping)
         this.setState({
            SubTotal: sub.toFixed(2),
@@ -24,8 +33,18 @@ class Cart extends Component{
        })
     }
 
-    componentDidUpdate = () => {
-        console.log(this.props.cart)
+    componentDidMount = () => {
+        var price = 0
+        this.props.cart.map((item) => {
+            price += item.product.price
+        })
+        this.updateMoneyPayment(price, "ADD")
+    }
+
+    deleteProductToCart = (id) => {
+        var info = this.props.cart.filter(idProdut => idProdut.product.id === id)
+        this.updateMoneyPayment(info[0].product.price, "DEL")
+        this.props.deleteProductToStore(id)
     }
 
     render(){
@@ -75,7 +94,7 @@ class Cart extends Component{
                                                         title={row.product.title}
                                                         quantity={1}
                                                         price={row.product.price}
-                                                        onClick={e => this.props.deleteProductToCart(row.product.id)}
+                                                        onClick={e => this.deleteProductToCart(row.product.id)}
                                                     />
                                                 )
                                             })
@@ -127,9 +146,9 @@ const mapStateToProp = state => {
     }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
     return {
-        deleteProductToCart: (id) => {
+        deleteProductToStore: (id) => {
             dispatch(CartActions.deleteProductToCart(id))
         }
     }
