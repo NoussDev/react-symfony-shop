@@ -22,7 +22,7 @@ You must :
 TODO : 
 React : 
 - display stars on product's page
-- manage price on chart's page
+- manage duplicate on chart's page with quantity
 - add payment's page
 
 Symfony : 

@@ -16,7 +16,6 @@ class Cart extends Component{
     }
 
     updateMoneyPayment = (price, action) => {
-        console.log(action)
         var sub
         switch(action){
             case 'ADD':
@@ -34,6 +33,7 @@ class Cart extends Component{
     }
 
     componentDidMount = () => {
+        console.log(this.props.cart)
         var price = 0
         this.props.cart.map((item) => {
             price += item.product.price

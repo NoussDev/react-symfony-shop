@@ -9,7 +9,12 @@
 {% block main %}
 <hr>
 <div class="container">
-    <h2 class="text-center mb-4">Add new product form</h2>
+    {% if page == "add" %}
+        <h2 class="text-center mb-4">Add new product form</h2>
+    {% else %}
+        <h2 class="text-center mb-4">Edit product form</h2>
+    {% endif %}
+    
         {{ form_start(form_add_product) }}
 
             {{ form_row(form_add_product.title, {
@@ -54,10 +59,18 @@
                 }) 
             }}
 
-            {{ form_row(form_add_product.save, {
+    {% if page == "add" %}
+        {{ form_row(form_add_product.save, {
                 "label":"Add product"
                 })
             }}
+    {% else %}
+        {{ form_row(form_add_product.save, {
+                "label":"Edit product"
+                })
+            }}
+    {% endif %}
+            
 
         {{ form_end(form_add_product) }}
 </div>

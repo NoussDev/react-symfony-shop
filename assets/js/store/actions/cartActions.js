@@ -1,11 +1,12 @@
-export const addProductToCart = (id, picture, title, price) => {
+export const addProductToCart = (id, picture, title, price, quantity) => {
     return {
         type: "ADD",
         payload: {
             id,
             picture,
             title,
-            price
+            price,
+            quantity
         }
     }
 }

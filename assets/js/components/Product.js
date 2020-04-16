@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import * as CartActions from "../store/actions/cartActions"
 
 class Product extends React.Component{
-
     render(){
         return(
             <div className="col-lg-12">
@@ -19,7 +18,7 @@ class Product extends React.Component{
                     <div className="d-flex justify-content-start">
                         <button 
                             className="btn btn-primary btn-lg" 
-                            onClick={ e => {this.props.addProductToCart(this.props.id,this.props.picture,this.props.title,this.props.price)}} 
+                            onClick={ e => {this.props.addProductToCart(this.props.id,this.props.picture,this.props.title,this.props.price, 1)}} 
                             id="add_cart">
                             <i className="fa fa-plus"></i> Add to Cart 
                         </button>
@@ -38,8 +37,8 @@ const mapStateToProp = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        addProductToCart: (id,picture,title,price) => {
-            dispatch(CartActions.addProductToCart(id,picture,title,price))
+        addProductToCart: (id,picture,title,price, quantity) => {
+            dispatch(CartActions.addProductToCart(id,picture,title,price,quantity))
         }
     }
 }

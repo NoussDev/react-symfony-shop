@@ -17,7 +17,7 @@ export default class Home extends React.Component{
     }
 
     async componentDidMount() {
-        let products = await API.get('products');
+        let products = await API.get('products.json');
         this.setState({
             products: products.data,
             loading: false

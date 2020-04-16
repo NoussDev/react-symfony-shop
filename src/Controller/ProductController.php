@@ -19,8 +19,10 @@ class ProductController extends AbstractController
      */
     public function index(Request $request, Product $product = null)
     {
+        $page="edit";
         if(!$product){
             $product = new Product();
+            $page = 'add';
         }
 
 
@@ -44,13 +46,13 @@ class ProductController extends AbstractController
             $em->flush();
 
             return $this->render('admin/product/index.html.twig', [
-                'user' => 'Admin',
+                'page' => $page,
                 'form_add_product' => $form->createView(),
             ]);
         }
 
         return $this->render('admin/product/index.html.twig', [
-            'user' => 'Admin',
+            'page' => $page,
             'form_add_product' => $form->createView(),
         ]);
     }

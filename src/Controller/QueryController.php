@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class QueryController extends AbstractController
 {
     /**
-     * @Route("/api/products", name="products")
+     * @Route("/customapi/products", name="products")
      * @return \Symfony\Component\HttpFoundation\JsonResponse
      */
     public function getProducts(ProductRepository $productRepository)

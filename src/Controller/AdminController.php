@@ -17,7 +17,6 @@ class AdminController extends AbstractController
         $products = $products->findAll();
 
         return $this->render('admin/index.html.twig',[
-            "user" => "admin",
             "products" => $products
         ]);
     }

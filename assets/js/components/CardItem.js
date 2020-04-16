@@ -9,7 +9,11 @@ export default class CardItem extends React.Component{
                     <img className="card-img-top" src={this.props.picture} alt="Card image cap"/>
                     <div className="card-body">
                         <h2 className="card-title">{this.props.title}</h2>
-                        <p className="card-text">{this.props.content}</p>
+                        <p className="card-text">
+                            {
+                                 this.props.content.length > 150 ? this.props.content.slice(0,150) + "..." :  this.props.content
+                            }
+                        </p>
                     </div>
                     <div className="card-footer">
                         <span>

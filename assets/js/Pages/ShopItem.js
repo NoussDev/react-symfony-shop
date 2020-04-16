@@ -16,14 +16,10 @@ export default class ShopItem extends React.Component{
 
     async componentDidMount() {
         let idProduct = this.props.match.params.id
-        let products = await API.get('products');
-        products.data.map((product) =>{
-            if(product.id == idProduct){
-                this.setState({
-                    product,
-                    loading: false
-                })
-            }
+        let product = await API.get('products/'+idProduct);
+        this.setState({
+            product: product.data,
+            loading: false
         })
     }
     render(){
